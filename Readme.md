@@ -91,13 +91,15 @@ helm install mediawiki mediawiki-helm-chart
 
 2. Map the Minikube Ingress IP with a custom DNS name (e.g., `wikimedia.local`) in `/etc/hosts`. 
 
-  ![alt text](image-1.png)
+  ![image](https://github.com/Rahulrajtiwari/mediawiki/assets/27560388/6a3e8631-ca61-46fa-b034-37038cf748d5)
+
 
 ### Step 6: Access MediaWiki 
 
 Access MediaWiki via the configured DNS name (e.g., `wikimedia.local`) in your web browser. 
 
- ![alt text](image.png) 
+![image](https://github.com/Rahulrajtiwari/mediawiki/assets/27560388/57d87469-6d00-432f-a510-f5bde18467e2)
+ 
 
 ### Optimization Scope 
 
@@ -107,12 +109,9 @@ Access MediaWiki via the configured DNS name (e.g., `wikimedia.local`) in your w
 
 - **CI/CD Pipeline Creation**: Establish a CI/CD pipeline for automated deployment of MediaWiki updates, improving development velocity and release reliability. 
 
- 
-
 - **Docker Optimization**: Optimize Dockerfile instructions to minimize the number of layers created in the image. 
 
 - Combine multiple commands into a single `RUN` instruction to reduce the number of layers and improve build speed. 
-
 
 - **Additional Optimization**: Explore other optimization strategies such as implementing caching mechanisms, optimizing container resource limits, and leveraging Kubernetes scheduling policies for better resource utilization. 
 
