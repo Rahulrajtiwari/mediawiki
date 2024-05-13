@@ -21,9 +21,12 @@ This documentation provides detailed steps for hosting MediaWiki on a Minikube c
 
 ### Step 1: Set up Dockerfiles 
 
-Create Dockerfiles for MediaWiki and MySQL. Ensure they are properly configured and pushed to DockerHub. 
+Create Dockerfiles for MediaWiki and MySQL. Ensure they are properly configured and pushed to DockerHub. For reference both dockerfiles are present in application and database directory respectively
 
-  
+  ![image](https://github.com/Rahulrajtiwari/mediawiki/assets/27560388/d7f0324b-9d9c-4776-a403-14af80c7a31c)
+  ![image](https://github.com/Rahulrajtiwari/mediawiki/assets/27560388/083df74c-9b0f-4184-848d-95004730316d)
+
+
 
 ### Step 2: Create Helm Chart 
 
@@ -58,7 +61,7 @@ mediawiki-helm-chart/
   └── Chart.yaml 
 
 ``` 
-
+**Note:** Helm chart are present inside "database" directory
   
 
 ### Step 3: Configure Helm Chart 
@@ -83,7 +86,8 @@ helm install mediawiki mediawiki-helm-chart
 
 ``` 
 
-  
+![image](https://github.com/Rahulrajtiwari/mediawiki/assets/27560388/37253490-4d9f-4172-8faf-16fb38e682af)
+
 
 ### Step 5: Expose MediaWiki Screenshot from 2024-05-13 04-05-00
 
