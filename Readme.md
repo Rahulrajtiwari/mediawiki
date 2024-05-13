@@ -101,20 +101,42 @@ Access MediaWiki via the configured DNS name (e.g., `wikimedia.local`) in your w
 ![image](https://github.com/Rahulrajtiwari/mediawiki/assets/27560388/57d87469-6d00-432f-a510-f5bde18467e2)
  
 
-### Optimization Scope 
 
-- **Karpenter Integration**: Utilize Karpenter with Horizontal Pod Autoscaler (HPA) for better scaling in a cost-optimized way, ensuring resources are provisioned only when required. 
+### Troubleshooting and Optimization:
+
+1. **Scaling Issues Identification:**
+   - Monitor the application performance metrics such as CPU usage, memory consumption, and response times to identify any scaling issues.
+   - **Karpenter Integration**: Utilize Karpenter with Horizontal Pod Autoscaler (HPA) for better scaling in a cost-optimized way, ensuring resources are provisioned only when required. 
+
+2. **Suggestions for Resolving Scaling Issues:**
+   - **Optimize Docker Images:**
+     - Review Dockerfiles for both MediaWiki and MySQL to ensure efficient image building.
+     - Minimize the number of layers in Dockerfiles to reduce image size and build time.
+     - Utilize multi-stage builds to separate build dependencies from runtime dependencies, resulting in smaller final images.
+   
+   - **Resource Requests and Limits:**
+     - Set appropriate resource requests and limits for MediaWiki and MySQL containers to ensure optimal resource utilization.
+     - Adjust resource requests and limits based on workload characteristics and observed performance metrics.
+
+   - **Database Optimization:**
+     - Fine-tune MySQL configuration parameters such as buffer sizes, connection limits, and query cache settings for optimal performance.
+     - Monitor database performance metrics using tools like MySQL Workbench or Prometheus to identify and address any database bottlenecks.
+
+   - **Caching Strategies:**
+     - Implement caching mechanisms such as Redis or Memcached to reduce database load and improve application responsiveness.
+     - Configure MediaWiki to utilize caching features for frequently accessed content to reduce database queries.
+
+   - **Content Delivery Network (CDN):**
+     - Integrate a CDN such as Amazon CloudFront or Cloudflare to cache static assets and accelerate content delivery to end-users.
+     - Configure caching policies to minimize latency and improve overall application performance.
+
+   - **Database Scaling Options:**
+     - Consider using managed database services such as Amazon RDS or Google Cloud SQL for MySQL to offload database management tasks and facilitate horizontal scaling.
+     - Evaluate sharding or partitioning strategies to horizontally partition data across multiple database instances for improved scalability.
 
 - **AWS Secret Manager Integration**: Implement AWS Secret Manager for securely storing database credentials, enhancing security and compliance. 
 
 - **CI/CD Pipeline Creation**: Establish a CI/CD pipeline for automated deployment of MediaWiki updates, improving development velocity and release reliability. 
-
-- **Docker Optimization**: Optimize Dockerfile instructions to minimize the number of layers created in the image. 
-
-- Combine multiple commands into a single `RUN` instruction to reduce the number of layers and improve build speed. 
-
-- **Additional Optimization**: Explore other optimization strategies such as implementing caching mechanisms, optimizing container resource limits, and leveraging Kubernetes scheduling policies for better resource utilization. 
-
   
 
 ### Conclusion 
